@@ -46,6 +46,8 @@ metadata:
     helm.sh/weight: "1"
     openshift.io/display-name: guardrails-detector-ibm-hap
     serving.kserve.io/deploymentMode: RawDeployment
+    opendatahub.io/hardware-profile-name: h200-borrowed-18g
+    opendatahub.io/hardware-profile-namespace: redhat-ods-applications
   name: guardrails-detector-ibm-hap
   labels:
     opendatahub.io/dashboard: 'true'
@@ -63,13 +65,13 @@ spec:
           cpu: {{ .Values.detectors.hap.resources.limits.cpu }}
           memory: {{ .Values.detectors.hap.resources.limits.memory }}
           {{- if .Values.detectors.hap.useGpu }}
-          nvidia.com/gpu: '1'
+          nvidia.com/mig-1g.18gb: '1'
           {{- end }}
         requests:
           cpu: {{ .Values.detectors.hap.resources.requests.cpu }}
           memory: {{ .Values.detectors.hap.resources.requests.memory }}
           {{- if .Values.detectors.hap.useGpu }}
-          nvidia.com/gpu: '1'
+          nvidia.com/mig-1g.18gb: '1'
           {{- end }}
       runtime: guardrails-detector-runtime-hap
       storage:

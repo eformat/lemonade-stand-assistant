@@ -24,7 +24,7 @@ spec:
         - '--model=/mnt/models'
         - '--served-model-name=llama32'
         - '--max-model-len'
-        - '512'
+        - '4096'
         - '--max-num-seqs'
         - '384'
         - '--max-num-batched-tokens'
@@ -58,6 +58,8 @@ metadata:
     helm.sh/weight: "1"
     openshift.io/display-name: llama-32
     serving.kserve.io/deploymentMode: RawDeployment
+    opendatahub.io/hardware-profile-name: h200-borrowed-18g
+    opendatahub.io/hardware-profile-namespace: redhat-ods-applications
   name: llama-32
   labels:
     opendatahub.io/dashboard: 'true'
@@ -77,11 +79,11 @@ spec:
         limits:
           cpu: '4'
           memory: 20Gi
-          nvidia.com/gpu: '1'
+          nvidia.com/mig-1g.18gb: '1'
         requests:
           cpu: '1'
           memory: 8Gi
-          nvidia.com/gpu: '1'
+          nvidia.com/mig-1g.18gb: '1'
       runtime: llama-32
       storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:llama-3.2-3b-instruct'
     tolerations:
