@@ -6,7 +6,7 @@ metadata:
     helm.sh/weight: "0"
     opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
     openshift.io/display-name: Guardrails Detector ServingRuntime for KServe
-    opendatahub.io/hardware-profile-name: h200-borrowed-18g
+    opendatahub.io/hardware-profile-name: unreserved-mig-18gb
     opendatahub.io/hardware-profile-namespace: redhat-ods-applications
   name: guardrails-detector-runtime-prompt-injection
   labels:
@@ -50,7 +50,7 @@ metadata:
     helm.sh/weight: "1"
     openshift.io/display-name: prompt-injection-detector
     serving.kserve.io/deploymentMode: RawDeployment
-    opendatahub.io/hardware-profile-name: h200-borrowed-18g
+    opendatahub.io/hardware-profile-name: unreserved-mig-18gb
     opendatahub.io/hardware-profile-namespace: redhat-ods-applications
   name: prompt-injection-detector
   labels:

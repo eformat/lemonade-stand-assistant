@@ -46,7 +46,7 @@ metadata:
     helm.sh/weight: "1"
     openshift.io/display-name: guardrails-detector-ibm-hap
     serving.kserve.io/deploymentMode: RawDeployment
-    opendatahub.io/hardware-profile-name: h200-borrowed-18g
+    opendatahub.io/hardware-profile-name: unreserved-mig-18gb
     opendatahub.io/hardware-profile-namespace: redhat-ods-applications
   name: guardrails-detector-ibm-hap
   labels:
