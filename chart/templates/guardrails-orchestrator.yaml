@@ -1,5 +1,4 @@
 ---
----
 apiVersion: trustyai.opendatahub.io/v1alpha1
 kind: GuardrailsOrchestrator
 metadata:
